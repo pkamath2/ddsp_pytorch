@@ -86,7 +86,7 @@ def extract_loudness(signal, sampling_rate, block_size, n_fft=2048):
         center=True,
     )
     S = np.log(abs(S) + 1e-7)
-    f = li.fft_frequencies(sampling_rate, n_fft)
+    f = li.fft_frequencies(sr=sampling_rate, n_fft=n_fft)
     a_weight = li.A_weighting(f)
 
     S = S + a_weight.reshape(-1, 1)
@@ -104,7 +104,7 @@ def extract_pitch(signal, sampling_rate, block_size):
         step_size=int(1000 * block_size / sampling_rate),
         verbose=1,
         center=True,
-        viterbi=True,
+        viterbi=False,
     )
     f0 = f0[1].reshape(-1)[:-1]
 
@@ -114,7 +114,6 @@ def extract_pitch(signal, sampling_rate, block_size):
             np.linspace(0, 1, f0.shape[-1], endpoint=False),
             f0,
         )
-
     return f0
 
 

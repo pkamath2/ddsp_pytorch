@@ -1,5 +1,5 @@
 data:
-  data_location: /slow-2/georges/dataset-urmp-wav
+  data_location: /media/appdir2/Github/DATA/DCASE-DogBark-16k/
   extension: "wav"
 
 preprocess:

@@ -1,6 +1,6 @@
 numpy>=1.19.4
-crepe>=0.0.11
-librosa>=0.8.0
+crepe==0.0.11
+librosa>=0.8.1
 einops>=0.3.0
 tqdm>=4.46.0
 torch>=1.7.0
